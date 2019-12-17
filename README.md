@@ -1,5 +1,6 @@
 # R-GUI-MainApp
 
+This project has received funding through the University of Bucharest, from UEFISCDI domain 6 "Supporting excellence research in universities" Institutional Development Fund. The project number was CNFIS-FDI-2019-0186, titled: "Integrated IT&C environment to develop and collaborate to support excelence research within the University of Bucharest".
 
 ## Dialog Events
 
