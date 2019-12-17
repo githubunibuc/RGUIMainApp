@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>window.Raphael = require('raphael');</script>
+    <script src="./importFromFileInterface.js"></script>
+    <style>
+    html, body{
+            font-family: 'Arial';
+            font-size: 13px;
+            font-weight: 400;
+            margin: 0px;
+            padding: 0px;
+        }
+        #paperImportFromFile{
+            display: flex;
+            align-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        rect{
+            shape-rendering: crispEdges;
+        }
+        circle, path { 
+            shape-rendering: geometricPrecision;
+        }
+        path{
+            shape-rendering: crispedges;
+        }
+        div[id^="container-"]{
+            overflow-x: hidden;
+            overflow-y: scroll;
+            background: #ffffff;
+            border: 1px solid #5d5d5d;
+        }
+
+        .scrollbarStyle::-webkit-scrollbar-track
+        {
+            box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+            background-color: #F5F5F5;
+        }
+        
+        .scrollbarStyle::-webkit-scrollbar
+        {
+            width: 7px;
+            background-color: #F5F5F5;
+        }
+        
+        .scrollbarStyle::-webkit-scrollbar-thumb
+        {
+            background-color: #bbbbbb;
+            border: 1px solid #bbbbbb;
+        }
+        input {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="paperImportFromFile"></div>
+</body>
+</html>

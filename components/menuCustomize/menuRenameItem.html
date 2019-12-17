@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./menuRenameItemInterface.js"></script>
+    <style>
+        body{
+            font-family: Arial;
+            font-size: 13px;
+        }
+        label{
+            display: block;
+            margin: 0px 0px 5px 0px;
+        }
+        #newName{
+            display: block;
+            box-sizing: border-box;
+            width: 100%;
+            padding: 3px 7px;
+        }
+        .buttons{
+            display: block;
+            text-align: right;
+            margin-top: 15px;
+        }
+        button{
+            background: #eee;
+            width: 80px;
+            height: 30px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label for="newName">New name</label>
+        <input type="text" name="newName" id="newName">
+        <div class="buttons">
+            <button id="save">Save</button>
+            <button id="cancel">Cancel</button>
+        </div>
+    </div>
+</body>
+</html>

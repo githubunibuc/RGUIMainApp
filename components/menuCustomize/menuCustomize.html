@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./menuCustomizeInterface.js"></script>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 13px;
+            margin: 10px 15px;
+        }
+        .container{
+            display: flex;
+            margin-top: 30px;
+        }
+        .arrows, .arrowsPosition{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 85px;
+            flex-direction: column;
+        }
+        .arrowsPosition{
+            width: 45px;
+        }
+        .left, .right{
+            width: 320px;
+        }
+        .arrow{
+            display: block;
+            width: 35px;
+            height: 35px;
+            background-image: url('./images/arrow-right.svg');
+            background-position: center;
+            background-size: 80%;
+            padding: 10px;
+            box-sizing: border-box;
+            background-repeat: no-repeat;
+            border: 1px solid #999;            
+            margin: 30px 0px;
+        }
+        #rightArrow{
+            background-image: url('./images/arrow-right.svg');
+        }
+        #leftArrow{
+            background-image: url('./images/arrow-left.svg');
+        }
+        #upArrow{
+            margin: 0px;
+            background-image: url('./images/arrow-up.svg');
+            width: 25px;
+            height: 25px;
+            margin-bottom: 10px;
+        }
+        #downArrow{
+            margin: 0px;
+            background-image: url('./images/arrow-down.svg');
+            width: 25px;
+            height: 25px;
+        }
+        .buttons{
+            display: block;
+            margin-top: 20px;
+            text-align: right;
+        }
+        .leftContainer div, .rightContainer div{
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 7px 10px 6px 10px;
+            padding-left: 25px;
+        }
+        .leftContainer div:hover, .rightContainer div:hover{
+            background-color: #ccc;
+            cursor: pointer;
+        }
+        .leftContainer, .rightContainer{
+            width: 100%;
+            height: 280px;
+            overflow-y: scroll;
+            border: 1px solid #ccc;
+            margin: 0 auto;
+            margin-top: 3px;
+        }
+        .rightContainer{
+            height: 342px;
+        }
+        label{
+            display: block;
+            width: 100%;
+            margin: 0 auto;
+        }
+        select, #searchNewElement{
+            box-sizing: border-box;
+            padding: 5px;
+            display: block;
+            width: 100%;
+            margin: 15px auto;
+            margin-top: 3px;
+            height: 30px;
+            border: 1px solid #ccc;
+        }
+        button{
+            background: #eee;
+            width: 80px;
+            height: 30px;
+            border: 1px solid #ccc;
+        }
+        #updateDialogList{
+            width: 140px;
+            float: left;
+        }
+        #makeDefault {
+            width: 120px;
+            float: left;
+            margin-left: 10px;
+        }
+        hr{
+            display: block; height: 1px;
+            border: 0; border-top: 1px solid #ccc;
+            margin: 1em 0; padding: 0;
+        }
+        .dropdown{
+            position: relative;
+            display: inline-block;
+        }
+        #insertMenu{
+            text-align: left;
+            width: 90px;
+            margin: 10px 0px 0px 0px;
+            padding-left: 10px;
+            background-image: url('./images/down.svg');
+            background-repeat: no-repeat;
+            background-size: 10px;
+            background-position-x: 65px;
+            background-position-y: center;
+        }
+        .dropdown-menu{
+            display: none;
+            position: absolute;
+            z-index: 1;
+            background: #eee;
+            border: 1px solid #ccc;
+            margin-top: 2px;
+            min-width: 150px;
+            box-sizing: border-box;
+            padding: 2px;
+            box-shadow: 3px 4px 2px -1px rgba(82,82,82,0.7);
+        }
+        .dropdown-menu a{
+            padding: 6px 16px;
+            text-decoration: none;
+            display: block;
+            color: black;
+        }
+        .dropdown-menu a:hover{
+            background-color: #ccc;
+        }
+        .show {
+            display: block;
+        }
+        #renameItem{
+            width: 100px;
+            margin-left: 15px;
+        }
+        .submenuArrow{
+            background-image: url('./images/arrow-right.svg');
+            background-repeat: no-repeat;
+            background-size: 10px;
+            background-position-x: 85%;
+            background-position-y: 10px;
+        }
+        #targetCategory{
+            display: inline-block;
+            width: 255px;
+        }
+        #menuTopEdit{
+            float: right;
+            width: 50px;
+            margin-top: 3px;
+            height: 30px;
+            background-image: url('./images/cog.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <label for="searchNewElement">Search</label>
+            <input type="text" id="searchNewElement" placeholder="Type to seach">
+            <label for="newItemCategory">Category</label>
+            <select name="newItemCategory" id="newItemCategory">
+                <option value="all">All</option>
+                <option value="system">System</option>
+                <option value="dialog">Dialogs</option>
+            </select>
+            <label for="leftContainer">Function</label>
+            <div class="leftContainer" id="leftContainer"></div>
+        </div>
+        <div class="arrows">
+            <button class="arrow" id="rightArrow"></button>
+            <button class="arrow" id="leftArrow"></button>
+        </div>
+        <div class="right">
+            <label for="targetCategory">Target</label>
+            <select name="targetCategory" id="targetCategory"></select>
+            <button id="menuTopEdit"></button>
+            <label for="leftContainer">Function</label>
+            <div class="rightContainer" id="rightContainer"></div>
+            <div class="dropdown">
+                <button id="insertMenu">Insert</button>
+                <div class="dropdown-menu" id="inserMenuDropdown">
+                    <a href="#" id="insertSeparator">Insert separator</a>
+                    <a href="#" id="insertSubmenu">Insert submenu</a>
+                </div>
+            </div>
+            <button id="renameItem">Rename item</button>
+        </div>
+        <div class="arrowsPosition">
+            <button class="arrow" id="upArrow"></button>
+            <button class="arrow" id="downArrow"></button>
+        </div>
+    </div>
+    <div class="buttons">
+        <hr/>
+        <button id="updateDialogList">Update dialog list</button>
+        <button id="makeDefault">Save as default</button>
+        <button id="saveMenu">Save</button>
+        <button id="cancelMenu">Cancel</button>
+        <button id="resetMenu">Reset</button>
+    </div>
+</body>
+</html>

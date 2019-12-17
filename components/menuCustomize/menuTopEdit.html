@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./menuTopEditInterface.js"></script>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 13px;
+        }
+        label{
+            display: block;
+            margin: 0px 0px 5px 0px;
+        }
+        #renameItemInput{
+            width: 209px;
+            box-sizing: border-box;
+            padding: 5px 7px;
+        }
+        button{
+            background: #eee;
+            width: 80px;
+            height: 30px;
+            border: 1px solid #ccc;
+        }
+        #renameItemButton{
+            width: 70px;
+            height: 29px;
+        }
+        .itemPosition{
+            display: flex;
+            margin: 20px 0px;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+        .itemList{
+            border: 1px solid #ccc;
+            width: 280px;
+            height: 300px;
+            overflow-y: scroll;
+        }
+        .itemList div{
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 7px 10px 6px 10px;
+            padding-left: 25px;
+        }
+        .itemList div:hover{
+            background-color: #ccc;
+            cursor: pointer;
+        }
+        .moveButtons{
+            width: 45px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #arrowUp, #arrowDown{
+            width: 25px;
+            height: 25px;
+            background-image: url('./images/arrow-up.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 80%;
+            margin-bottom: 10px;
+        }
+        #arrowDown{
+            background-image: url('./images/arrow-down.svg')
+        }
+        .mainButtons{
+            text-align: right;
+        }
+        #newItem{
+            float:left;
+        }
+        hr{
+            display: block; height: 1px;
+            border: 0; border-top: 1px solid #ccc;
+            margin: 1em 0; padding: 0;
+        }
+        button.deleteItem {
+            width: 15px;
+            height: 15px;
+            background-image: url('./images/times.svg');
+            float: right;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 9px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="rename">
+            <label for="renameItemInput">New name</label>
+            <input type="text" name="renameItemInput" id="renameItemInput" value="">
+            <button id="renameItemButton">Rename</button>
+        </div>
+        <div class="itemPosition">
+            <div class="itemList" id="itemList"></div>
+            <div class="moveButtons">
+                <button id="arrowUp"></button>
+                <button id="arrowDown"></button>
+            </div>
+        </div>
+        <div class="mainButtons">
+            <hr/>
+            <button id="newItem">New item</button>
+            <button id="save">Save</button>
+            <button id="cancel">Cancel</button>
+        </div>
+    </div>
+</body>
+</html>

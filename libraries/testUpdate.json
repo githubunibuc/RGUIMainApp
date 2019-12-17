@@ -1,0 +1,97 @@
+{
+	"missing": [
+		"QCA",
+		"Emilian"
+	],
+	"changed": {
+		"dataframe": {
+			"aa": {
+				"nrows": [
+					"5"
+				],
+				"ncols": [
+					"1"
+				],
+				"rownames": [
+					"1",
+					"2",
+					"3",
+					"4",
+					"5"
+				],
+				"colnames": [
+					"A"
+				],
+				"numeric": [
+					"true"
+				],
+				"calibrated": [
+					"false"
+				],
+				"binary": [
+					"false"
+				],
+				"scrollvh": [
+					"0",
+					"0"
+				],
+				"vdata": [
+					[
+						"1",
+						"2",
+						"3",
+						"4",
+						"5"
+					]
+				],
+				"vcoords": [
+					"1_1_5_1_1"
+				]
+            },
+            "bb": {
+				"nrows": [
+					"5"
+				],
+				"ncols": [
+					"1"
+				],
+				"rownames": [
+					"1",
+					"2",
+					"3",
+					"4",
+					"5"
+				],
+				"colnames": [
+					"B"
+				],
+				"numeric": [
+					"true"
+				],
+				"calibrated": [
+					"false"
+				],
+				"binary": [
+					"false"
+				],
+				"scrollvh": [
+					"0",
+					"0"
+				],
+				"vdata": [
+					[
+						"1",
+						"2",
+						"3",
+						"4",
+						"5"
+					]
+				],
+				"vcoords": [
+					"1_1_5_1_1"
+				]
+			}
+        },
+        "list": ["a", "b", "c"]
+	}
+}
